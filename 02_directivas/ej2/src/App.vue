@@ -4,13 +4,21 @@ const nombre = 'Nieves';
 
 <template>
     <div class="container pt-5">
-        <h1>¡Hola {{ nombre }}!</h1>
-        <p class="alert alert-success">Esto es una prueba.</p>
+        <h1>Practica con v-bind</h1>
+        <p class="text-info">Este es ejemplo práctico con v-bind en Vue 3.</p>
+        <a href="#">Ir al ejemplo</a>
     </div>
 </template>
 
 <style scoped>
-h1 {
-    color: tomato;
-}
+    .clicado_h1 {
+
+    }
+    .clicado_p {
+
+    }
+    .clicado_a {
+
+    }
+
 </style>

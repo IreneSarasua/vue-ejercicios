@@ -1,16 +1,34 @@
 <script setup>
-const nombre = 'Nieves';
+import {ref} from 'vue';
+
+const mensaje = ref('');
+const cont = ref(0);
+
+const contarCarac = () => {
+    cont.value = mensaje.value.length;
+}
 </script>
 
 <template>
-    <div class="container pt-5">
-        <h1>¡Hola {{ nombre }}!</h1>
-        <p class="alert alert-success">Esto es una prueba.</p>
+    <div class="container w-50">
+        <h2>Contar Caracteres</h2>
+        <div class=" border border-1 border-black rounded p-3">
+            <div class="mb-3">
+                <label class="form-label" for="nombre">Mensaje</label>
+                <input class="form-control" id="nombre" type="text" v-model="mensaje" @keyup="contarCarac()"/>
+
+            </div>
+            <div class="alert alert-warning d-flex justify-content-between">
+                <span v-if="cont === 0">Escribe algo...</span>
+                <span v-else>Mensaje: {{ mensaje }}</span>
+                <span class="badge text-bg-primary rounded-pill">{{ cont }}</span>
+            </div>
+
+
+        </div>
     </div>
 </template>
 
 <style scoped>
-h1 {
-    color: tomato;
-}
+
 </style>
