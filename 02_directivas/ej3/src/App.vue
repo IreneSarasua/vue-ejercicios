@@ -10,12 +10,12 @@ const contarCarac = () => {
 </script>
 
 <template>
-    <div class="container w-50">
+    <div class="container w-50 pt-3">
         <h2>Contar Caracteres</h2>
         <div class=" border border-1 border-black rounded p-3">
             <div class="mb-3">
-                <label class="form-label" for="nombre">Mensaje</label>
-                <input class="form-control" id="nombre" type="text" v-model="mensaje" @keyup="contarCarac()"/>
+                <label class="form-label" for="mensaje">Mensaje</label>
+                <input class="form-control" id="mensaje" type="text" v-model="mensaje" @keyup="contarCarac()" placeholder="Escribe un mensaje"/>
 
             </div>
             <div class="alert alert-warning d-flex justify-content-between">

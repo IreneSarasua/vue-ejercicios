@@ -16,11 +16,11 @@
         <div class=" border border-1 border-black rounded p-3">
             <div class="mb-3">
                 <label class="form-label" for="nombre">Nombre</label>
-                <input class="form-control" id="nombre" type="text" v-model="datos.nombre"/>
+                <input class="form-control" id="nombre" type="text" v-model="datos.nombre" placeholder="Nombre"/>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="nombre">Apellido</label>
-                <input class="form-control" id="nombre" type="text" v-model="datos.apellido"/>
+                <input class="form-control" id="nombre" type="text" v-model="datos.apellido" placeholder="Apellido"/>
             </div>
             <div class="alert alert-warning">
                 Tu nombre completo es: {{ datos.nombre }} {{ datos.apellido }}
