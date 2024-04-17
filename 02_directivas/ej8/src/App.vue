@@ -15,6 +15,8 @@ const tareas = ref([
         completada: false
     }
 ]);
+const estiloPendiente = 'badge text-bg-primary rounded-pill';
+const estiloCompletada = 'badge text-bg-secondary rounded-pill';
 
 const actualizarTarea = (index) => {
     let tarea = tareas.value[index];
@@ -36,7 +38,8 @@ const actualizarTarea = (index) => {
             <li class="list-group-item d-flex justify-content-between align-items-center"
                 v-for="(elem, index) of tareas" :key="index" @dblclick="actualizarTarea(index)">
                 {{ elem.texto }}
-                <span :class="elem.completada ? 'badge text-bg-secondary rounded-pill' : 'badge text-bg-primary rounded-pill'">
+
+                <span :class="elem.completada ? estiloCompletada : estiloPendiente">
                     {{ elem.completada ?  'Completada': 'Pendiente'}}
                 </span>
 
