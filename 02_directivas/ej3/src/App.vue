@@ -1,12 +1,11 @@
 <script setup>
-import {ref} from 'vue';
+import {ref, computed} from 'vue';
 
 const mensaje = ref('');
-const cont = ref(0);
 
-const contarCarac = () => {
-    cont.value = mensaje.value.length;
-}
+const contarCaracteres = computed(() => {
+    return mensaje.value.length
+})
 </script>
 
 <template>
@@ -15,13 +14,15 @@ const contarCarac = () => {
         <div class=" border border-1 border-black rounded p-3">
             <div class="mb-3">
                 <label class="form-label" for="mensaje">Mensaje</label>
-                <input class="form-control" id="mensaje" type="text" v-model="mensaje" @keyup="contarCarac()" placeholder="Escribe un mensaje"/>
+                <input class="form-control" id="mensaje" type="text" v-model="mensaje"
+                       placeholder="Escribe un mensaje"/>
 
             </div>
             <div class="alert alert-warning d-flex justify-content-between">
-                <span v-if="cont === 0">Escribe algo...</span>
+                <span v-if="mensaje.length === 0">Escribe algo...</span>
                 <span v-else>Mensaje: {{ mensaje }}</span>
-                <span class="badge text-bg-primary rounded-pill">{{ cont }}</span>
+                <span class="badge text-bg-primary rounded-pill">{{ contarCaracteres }}</span>
+
             </div>
 
 

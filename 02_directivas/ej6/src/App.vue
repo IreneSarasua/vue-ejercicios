@@ -20,12 +20,22 @@ const campo2 = ref('');
                        placeholder="Campo 2"  v-model="campo2"/>
 
             </div>
+            <!-- Usando v-show -->
             <div class="alert alert-warning" v-show="campo1.length === 0 || campo2.length === 0">
                 Completa ambos campos.
             </div>
             <div class="alert alert-success" v-show="campo1.length !== 0 && campo2.length !== 0">
                 Ambos campos están llenos.
             </div>
+
+            <!-- Usando v-if
+            <div class="alert alert-success" v-if="campo1.length !== 0 && campo2.length !== 0">
+                Ambos campos están llenos.
+            </div>
+            <div class="alert alert-warning" v-else>
+                Completa ambos campos.
+            </div>
+            -->
 
         </div>
     </div>
