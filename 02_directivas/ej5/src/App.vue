@@ -12,7 +12,7 @@ const miArray = ref(['Elemento 1', 'Elemento 2', 'Elemento 3']);
 
         <ul class="list-group w-100">
             <li class="list-group-item d-flex justify-content-between align-items-center"
-                v-for="elem of miArray">
+                v-for="(elem, index) of miArray" :key="index">
                 {{ elem }}
             </li>
         </ul>
